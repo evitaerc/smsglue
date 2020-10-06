@@ -411,6 +411,11 @@
               <div class="report"></div>
               <button>Copy to Clipboard</button>
             </div>
+            <div class="field-to-copy">
+              <label>SMS URL Callback (voip.ms)</lable>
+              <div class="notify"></div>
+              <button>Copy to Clipboard</button>
+            </div>
             <p>Once these fields are populated, tap <strong>Done</strong> in your app's settings and save your changes. To ensure push notifications work immediately, force-quit the app and relaunch.</p>
             <p><strong><em>NOW</em> you're all done!</strong></p>
             <br><br>
@@ -475,6 +480,7 @@
             $('div.send').text(data.response.hooks.send);
             $('div.fetch').text(data.response.hooks.fetch);
             $('div.report').text(data.response.hooks.report);
+            $('div.notify').text(data.response.hooks.notify);
             nextStep(4);
           }
         });
