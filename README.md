@@ -69,7 +69,7 @@ For example, this can be used to include a footer and Google Analytics.
 Create a new service file in /lib/systemd/system (let's just call it smsglue.service).
 Copy the below contents and modify a couple entries:
 
-##### CODE START #####
+```
 [Unit]
 Description=Node.js smsglue Server
 After=syslog.target network-online.target
@@ -89,4 +89,4 @@ KillMode=process
 
 [Install]
 WantedBy=multi-user.target
-##### CODE END #####
+```
