@@ -92,10 +92,15 @@ WantedBy=multi-user.target
 ```
 
 Enable the service to run at startup.
-```sudo systemctl enable smsglue.service```
+`
+sudo systemctl enable smsglue.service
+`
 
 Start the service.
-```sudo systemctl start smsglue.service```
+`
+sudo systemctl start smsglue.service
+`
 
 Check to verify that the service is active and running.
-```sudo systemctl status smsglue.service```
+
+`sudo systemctl status smsglue.service`
