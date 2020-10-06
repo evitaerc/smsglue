@@ -67,6 +67,7 @@ For example, this can be used to include a footer and Google Analytics.
 ## Starting as a Service (systemctl | Ubuntu Server)
 
 Create a new service file in /lib/systemd/system (let's just call it smsglue.service).
+
 Copy the below contents and modify a couple entries:
 
 ```
