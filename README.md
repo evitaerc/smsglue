@@ -64,7 +64,7 @@ It's possible to append custom HTML content to the end of the index.html
 page by setting an environment variable named `BEFORE_CLOSING_BODY_TAG`.
 For example, this can be used to include a footer and Google Analytics.
 
-## Starting as a Service (systemctl)
+## Starting as a Service (systemctl | Ubuntu Server)
 
 Create a new service file in /lib/systemd/system (let's just call it smsglue.service).
 Copy the below contents and modify a couple entries:
@@ -90,3 +90,12 @@ KillMode=process
 [Install]
 WantedBy=multi-user.target
 ```
+
+Enable the service to run at startup.
+`sudo systemctl enable smsglue.service`
+
+Start the service.
+`sudo systemctl start smsglue.service`
+
+Check to verify that the service is active and running.
+`sudo systemctl status smsglue.service`
