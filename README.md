@@ -63,3 +63,30 @@ http {
 It's possible to append custom HTML content to the end of the index.html
 page by setting an environment variable named `BEFORE_CLOSING_BODY_TAG`.
 For example, this can be used to include a footer and Google Analytics.
+
+## Starting as a Service (systemctl)
+
+Create a new service file in /lib/systemd/system (let's just call it smsglue.service).
+Copy the below contents and modify a couple entries:
+
+##### CODE START #####
+[Unit]
+Description=Node.js smsglue Server
+After=syslog.target network-online.target
+
+[Service]
+Type=simple
+# change the user name to the account where smsglue is installed
+User=changeme
+# change the working directory to the location of the smsglue root folder
+WorkingDirectory=/home/changeme/smsglue
+Environment=NODE_ENV=production PORT=5000
+# change the folder to the same as the working directory
+ExecStart=/usr/bin/node /home/changeme/smsglue/service.js
+Restart=on-failure
+RestartSec=10
+KillMode=process
+
+[Install]
+WantedBy=multi-user.target
+##### CODE END #####
